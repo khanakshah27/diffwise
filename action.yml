@@ -1,0 +1,22 @@
+name: "Diffwise"
+description: "Comments on every pull request with what changed and what could break."
+author: "Khanak Shah"
+branding:
+  icon: "git-pull-request"
+  color: "purple"
+inputs:
+  github-token:
+    description: "Token used to read the pull request and post the comment."
+    default: ${{ github.token }}
+  anthropic-api-key:
+    description: "Optional. Adds a written summary and deeper risk notes from Claude. Without it, Diffwise uses its built-in rules only."
+    required: false
+  model:
+    description: "Claude model used when an API key is given."
+    default: "claude-sonnet-5-5"
+  max-diff-chars:
+    description: "How much of the diff is sent to the model."
+    default: "60000"
+runs:
+  using: "node20"
+  main: "src/index.js"

@@ -1,0 +1,8 @@
+{
+  "name": "diffwise",
+  "version": "0.1.0",
+  "description": "GitHub Action that comments on pull requests with what changed and what could break.",
+  "private": true,
+  "license": "MIT",
+  "scripts": { "test": "node --test tests/*.test.js" }
+}
